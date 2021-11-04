@@ -50,7 +50,7 @@ struct Home: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 25, height: 26)
-                                .foregroundColor(selectedTab == image ? getColor(image: image) : Color.gray)
+                                .foregroundColor(selectedTab == image ? Color.blue : Color.gray)
                                 .padding(selectedTab == image ? 15 : 0)
                                 .background(Color.white.opacity(selectedTab == image ? 1 : 0).clipShape(Circle()))
                                 .matchedGeometryEffect(id: image, in: animation)
@@ -75,26 +75,13 @@ struct Home: View {
         }
         .ignoresSafeArea(.all, edges: .bottom)
     }
-    
-    func getColor(image: String) -> Color {
-        switch image {
-        case "house":
-            return Color("Color1")
-        case "bookmark":
-            return Color("Color2")
-        case "bell ":
-            return Color.purple
-        default:
-            return Color.blue
-        }
-    }
 }
 
 var tabs = ["house", "bookmark", "bell", "message"]
 
 
-//struct Home_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Home()
-//    }
-//}
+struct Home_Previews: PreviewProvider {
+    static var previews: some View {
+        Home()
+    }
+}
