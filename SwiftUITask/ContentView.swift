@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-       Home()
+        // Animated Loader view
+        AnimatedLoader()
+        
+        // Uncomment to see the Animated Tab Bar View
+        //        Home()
     }
 }
 

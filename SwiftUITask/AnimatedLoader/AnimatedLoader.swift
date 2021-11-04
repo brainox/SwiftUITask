@@ -42,7 +42,7 @@ struct AnimatedLoader: View {
         }
     }
     
-    func getRotationAngle() -> Angle {
+    func rotationAngle() -> Angle {
         return .degrees(360 * self.trackerRotation) + .degrees(120)
     }
     
@@ -53,7 +53,7 @@ struct AnimatedLoader: View {
         
         Timer.scheduledTimer(withTimeInterval: animationDuration, repeats: false) { _ in
             withAnimation(Animation.easeInOut(duration: self.trackerRotation * self.animationDuration)) {
-                self.rotationDegree += self.getRotationAngle()
+                self.rotationDegree += self.rotationAngle()
             }
         }
         
